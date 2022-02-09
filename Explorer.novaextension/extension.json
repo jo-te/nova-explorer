@@ -1,0 +1,76 @@
+{
+    "identifier": "me.jo-te.Explorer",
+    "name": "Explorer",
+    "organization": "jo-te",
+    "description": "An alternative to the built in file browser currently providing only more file type icons.",
+    "version": "1.0",
+    "categories": ["sidebars"],
+    "license": "MIT",
+    "repository": "https://github.com/jo-te/nova-explorer.git",
+    "bugs": "https://github.com/jo-te/nova-explorer/issues",
+    
+    "main": "dist/main.js",
+    
+    "activationEvents": [],
+    
+    "entitlements": {
+        "filesystem": "readwrite"
+    },
+    
+    "sidebars": [
+        {
+            "id": "explorer",
+            "name": "Explorer",
+            "smallImage": "files-small",
+            "smallSelectedImage": "files-small-selected",
+            "largeImage": "files-large",
+            "sections": [
+                {
+                    "id": "files",
+                    "name": "Files",
+                    "allowMultiple": true,
+                    "placeholderText": "Current working directory is empty.",
+                    "contextCommands": [
+                        {
+                            "title": "Open",
+                            "command": "files.open",
+                            "when": "viewItem != null"
+                        },
+                        {
+                            "title": "Show in Finder",
+                            "command": "files.showInFinder"
+                        },
+                        {
+                            "separator": true
+                        },
+                        {
+                            "title": "Rename",
+                            "command": "files.rename",
+                            "when": "viewItem != null"
+                        },
+                        {
+                            "title": "Delete",
+                            "command": "files.delete",
+                            "when": "viewItem != null"
+                        },
+                        {
+                            "separator": true
+                        },
+                        {
+                            "title": "New folder",
+                            "command": "files.newFolder"
+                        },
+                        {
+                            "title": "New file",
+                            "command": "files.newFile"
+                        },
+                        {
+                            "title": "Reload",
+                            "command": "files.reload"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

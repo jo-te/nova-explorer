@@ -1,0 +1,8 @@
+.nova
+
+.DS_Store
+
+node_modules
+dist
+types
+*.tsbuildinfo

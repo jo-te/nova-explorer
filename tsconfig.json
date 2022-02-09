@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es6",
+    "lib": ["es6"],
+    
+    /* Projects */
+    "composite": true,
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
+    
+    /* Modules */
+    "module": "commonjs",
+    "rootDir": "src",
+    
+    /* JavaScript Support */
+    "allowJs": true,
+    
+    /* Emit */
+    "outDir": "Explorer.novaextension/Scripts/dist",
+    "declaration": true,
+    "declarationDir": "./types",
+    
+    /* Interop Constraints */
+    "forceConsistentCasingInFileNames": true,
+    
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    
+    /* Completeness */
+    "skipDefaultLibCheck": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

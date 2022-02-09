@@ -1,0 +1,23 @@
+{
+  "Files": "Dateien",
+  "Open": "Öffnen",
+  "Show in Finder": "Im Finder anzeigen",
+  "Rename": "Umbenennen",
+  "Delete": "Löschen",
+  "New folder": "Neuer Ordner",
+  "New file": "Neue Datei",
+  "Reload": "Aktualisieren",
+  "Unnamed folder": "Unbenannter Ordner",
+  "Unnamed file": "Unbenannte Datei",
+  "Current working directory is empty.": "Aktuelles Arbeitsverzeichnis ist leer.",
+  "info.multipleRenamingNotPossible": "Mehrere Objekte gleichzeitig umzubennen, ist derzeit nicht möglich.",
+  "info.fileOrDirCreationNotPossibleWithMultiSelection": "Dateien oder Ordner zu erstellen, wenn mehrere Elemente ausgewählt sind, ist derzeit nicht möglich.",
+  "error.newFileOrDirNameMayNotBeEmpty": "Der neue Name darf nicht leer sein.",
+  "error.valueIsNotValidName": "„{value}“ ist kein gültiger Name.",
+  "error.elementWasMovedOrDeleted": "Element wurde in der Zwischenzeit bewegt oder gelöscht.",
+  "error.elementWithNameExistsAlready": "Element mit dem Namen „{value}“ existiert bereits. Bitte entweder zuerst löschen oder einen anderen Namen wählen.",
+  "msg.renameFileOrDir": "„{fileOrDirName}“ umbenennen",
+  "msg.reallyDeleteFileOrDir": "Soll „{fileOrDirName}“ wirklich unumkehrbar gelöscht werden?",
+  "msg.nameOfNewFolder": "Name des neuen Ordners",
+  "msg.nameOfNewFile": "Name der neuen Datei"
+}

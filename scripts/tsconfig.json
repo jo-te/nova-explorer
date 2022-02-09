@@ -1,0 +1,29 @@
+{
+  "references": [{ "path": "../tsconfig.json" }],
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es6",
+    "lib": ["es6"],
+
+    /* Modules */
+    "module": "commonjs",
+    "rootDir": "src",
+
+    /* JavaScript Support */
+    "allowJs": true,
+
+    /* Emit */
+    "outDir": "dist",
+
+    /* Interop Constraints */
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+
+    /* Completeness */
+    "skipDefaultLibCheck": true
+  },
+  "include": ["src/**/*"]
+}
