@@ -118,9 +118,8 @@ export const createFileOrDir = (
       ? localize("msg.nameOfNewFolder")
       : localize("msg.nameOfNewFile");
   const initialValue =
-    providedInitialValue || type === "DIR"
-      ? localize("Unnamed folder")
-      : localize("Unnamed file");
+    providedInitialValue ||
+    (type === "DIR" ? localize("Unnamed folder") : localize("Unnamed file"));
 
   return new Promise((resolve) => {
     nova.workspace.showInputPanel(
