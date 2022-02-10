@@ -4,7 +4,7 @@
 
 ## Version 1.0.2
 #### Updates
-- Updated references in extensions README.
+- Updated references in extension's README.
 
 ## Version 1.0.1
 Faulty release
