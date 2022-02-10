@@ -10,7 +10,7 @@
 - Provides additional file icons for better orientation<br>
   *An endings icon reference document can be found at [https://github.com/jo-te/nova-explorer/blob/main/Explorer.novaextension/Docs/endings-icon-references.md](https://github.com/jo-te/nova-explorer/blob/main/Explorer.novaextension/Docs/endings-icon-references.md).*
 - Minimal features you expect from a file browser: `Create`, `Open`, `Rename`, `Delete` files
-- Also the `Reveal in finder` command is included in case you need an actual grown file browser
+- Also the `Show in Finder` command is included in case you need an actual grown file browser
 
 ### Features you may miss
 - Duplicating files
