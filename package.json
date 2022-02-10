@@ -14,7 +14,7 @@
     "watch": "tsc -w"
   },
   "author": "jo-te",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.16",
     "@types/nova-editor-node": "^4.1.4",
