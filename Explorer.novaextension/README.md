@@ -20,15 +20,20 @@
 - Everything not listed as feature above
 
 ## Requirements
-
 **Explorer** is currently only compatible with local working directories.
 
 ## Usage
-
 Open it via the sidebar center and move it into the sidebar dock. Voilà it's ready to use.<br>
 Double-click on elements to open them.<br>
 Right-click on elements to interact with them.
 
 ### Configuration
-
 Nothing to configure at the moment.
+
+## Miscellaneous
+### Credits
+Big thanks goes to [**apexskier**](https://github.com/apexskier) for contributing type definitons (`@types/nova-editor` and also `@types/nova-editor-node`) for Nova's API to the community which made development much easier.
+
+### Icon requests
+Currently the provided file icons only cover a small area of frontend development.<br>
+Maybe you are missing some important icons for your daily development work. Don't hesitate to request icons via the repository.
