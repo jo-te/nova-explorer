@@ -1,4 +1,4 @@
-## Next
+## Version 1.0.3
 #### Fixes
 - Fixed issue with not taking over input value as initial value of new dialog when trying to create a file or folder with an invalid name.
 - Fixed issue of not revealing files when creating or renaming files in root directory.
