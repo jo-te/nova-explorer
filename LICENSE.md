@@ -1,0 +1,1 @@
+./Explorer.novaextension/LICENSE.md
