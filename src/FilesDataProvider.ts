@@ -154,6 +154,10 @@ export class FilesDataProvider implements TreeDataProvider<FileItem> {
     // Requests the parent of an element, for use with the reveal() method
 
     const parentPath = nova.path.dirname(element.path);
+    if (parentPath === this.rootPath) {
+      // Nova expects no TreeItem for root but null
+      return null;
+    }
     return this.pathFileItemDict[parentPath] || null;
   }
 
