@@ -80,6 +80,18 @@ function activate() {
   // FileWatcher implements the Disposable interface
   nova.subscriptions.add(fileSystemWatcher);
 
+  const hasTreeViewSelection = () => {
+    return (
+      treeView.selection.length > 0 &&
+      // Nova keeps items that got actually deleted in meantime in treeView.selection
+      // (as long as nothing new gets selected and even so we call reload) therefor we
+      // check if selection is maybe obsolete and not visible to the user (thereby actually empty)
+      treeView.selection.some((item) =>
+        filesDataProvider.hasElementForPath(item.path)
+      )
+    );
+  };
+
   nova.commands.register(FILES_SHOW_IN_FINDER_CMD, () => {
     treeView.selection.forEach((element) => {
       nova.fs.reveal(element.path);
@@ -169,13 +181,7 @@ function activate() {
   const createFileOrDirInSelection = (type: "FILE" | "DIR") => {
     const selection = treeView.selection;
     const selectionCount = treeView.selection.length;
-    if (
-      selectionCount < 1 ||
-      // Nova keeps items that got actually deleted in meantime in treeView.selection
-      // (as long as nothing new gets selected and even so we call reload) therefor we
-      // check if selection is maybe obsolete and not visible to the user (thereby actually empty)
-      selection.every((item) => !filesDataProvider.hasElementForPath(item.path))
-    ) {
+    if (!hasTreeViewSelection()) {
       createFileOrDirAndReveal(workspaceDir, type);
     } else if (selectionCount === 1) {
       const fileOrDirItem = selection[0];
@@ -202,18 +208,23 @@ function activate() {
   });
 
   nova.commands.register(FILES_RELOAD_CMD, () => {
-    let reloadPromise = Promise.resolve();
-    treeView.selection.forEach((element) => {
-      if (element.isDir()) {
+    if (!hasTreeViewSelection()) {
+      const element = filesDataProvider.getElementForPath(workspaceDir);
+      if (element) {
         filesDataProvider.initChildElements(element);
-        const elementToReload = element.path === workspaceDir ? null : element;
-        reloadPromise = reloadPromise.then(() =>
-          treeView.reload(elementToReload)
-        );
+        treeView.reload();
       }
-    });
-    if (treeView.selection.length === 1) {
-      reloadPromise.then(() => treeView.reveal(treeView.selection[0]));
+    } else {
+      let reloadPromise = Promise.resolve();
+      treeView.selection.forEach((element) => {
+        if (element.isDir()) {
+          filesDataProvider.initChildElements(element);
+          reloadPromise = reloadPromise.then(() => treeView.reload(element));
+        }
+      });
+      if (treeView.selection.length === 1) {
+        reloadPromise.then(() => treeView.reveal(treeView.selection[0]));
+      }
     }
   });
 }

@@ -1,4 +1,7 @@
 ## Next
+#### Fixes
+- Fixed issue of not allowing to manually reload root of file browser.
+
 #### Updates
 - Increased resolution of custom icons for files and folders.
 
