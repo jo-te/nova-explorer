@@ -1,3 +1,7 @@
+## Next
+#### Updates
+- Increased resolution of custom icons for files and folders.
+
 ## Version 1.0.3
 #### Fixes
 - Fixed issue with not taking over input value as initial value of new dialog when trying to create a file or folder with an invalid name.
