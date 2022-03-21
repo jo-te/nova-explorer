@@ -11,6 +11,7 @@
   *An endings icon reference document can be found at [https://github.com/jo-te/nova-explorer/blob/main/Explorer.novaextension/Docs/endings-icon-references.md](https://github.com/jo-te/nova-explorer/blob/main/Explorer.novaextension/Docs/endings-icon-references.md).*
 - Minimal features you expect from a file browser: `Create`, `Open`, `Rename`, `Delete` files
 - Also the `Show in Finder` command is included in case you need an actual grown file browser
+- Allows to display folders before files or vice versa
 
 ### Features you may miss
 - Duplicating files
@@ -26,9 +27,10 @@
 Open it via the sidebar center and move it into the sidebar dock. Voilà it's ready to use.<br>
 Double-click on elements to open them.<br>
 Right-click on elements to interact with them.
+Use the button on the right side of the header of the sidebar to change order of elements.
 
 ### Configuration
-Nothing to configure at the moment.
+See settings of the extension and use the descriptions for guidance.
 
 ## Miscellaneous
 ### Credits
