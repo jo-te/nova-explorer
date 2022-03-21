@@ -1,7 +1,7 @@
 ## Next
 #### New
 - Added new custom icons for `.json`, `.md` and `.tsbuildinfo` files and for `.git` folder.
-- Added button in sidebar to toggle order of items in three ways: `Independent of type`, `Folders first`, `Files first`.
+- Added button in sidebar to allow toggling order of items in three ways: `Independent of type`, `Folders first`, `Files first`.
 - Added configuration option to set initial order of file and folder items in sidebar.
 
 #### Fixes
