@@ -30,6 +30,14 @@
                     "name": "Files",
                     "allowMultiple": true,
                     "placeholderText": "Current working directory is empty.",
+                    "headerCommands": [
+                        {
+                            "title": "Switch order",
+                            "image": "switch-order",
+                            "tooltip": "Switch order of items",
+                            "command": "files.switchOrder"
+                        }
+                    ],
                     "contextCommands": [
                         {
                             "title": "Open",
@@ -71,6 +79,17 @@
                     ]
                 }
             ]
+        }
+    ],
+    
+    "config": [
+        {
+            "key": "files.initial-order",
+            "title": "Initial order of files and folders",
+            "description": "How items in 'files' section of the Explorer sidebar shall be ordered initially.",
+            "type": "enum",
+            "values": ["Independent of type", "Folders first", "Files first"],
+            "default": "Independent of type"
         }
     ]
 }

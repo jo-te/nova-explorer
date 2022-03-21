@@ -1,6 +1,31 @@
 import { FILES_DOUBLE_CLICK_CMD } from "./commands";
+import { config } from "./config/config";
+import { FileItemsOrder } from "./config/types";
 import { FileItem } from "./FileItem";
 import { resolvePathImage } from "./resolvePathImage";
+
+const getSortFunction = (orderStrategy: FileItemsOrder) => {
+  return (a: FileItem, b: FileItem) => {
+    let sortValue = 0;
+    const setSortValueForOrderStrategy = (factor = 1) => {
+      if (orderStrategy === "Folders first") sortValue = -1 * factor;
+      else if (orderStrategy === "Files first") sortValue = 1 * factor;
+    };
+    const aIsDir = a.isDir();
+    const bIsDir = b.isDir();
+    if (aIsDir && !bIsDir) {
+      setSortValueForOrderStrategy();
+    } else if (!aIsDir && bIsDir) {
+      setSortValueForOrderStrategy(-1);
+    }
+
+    if (sortValue === 0) {
+      sortValue = a.name.localeCompare(b.name);
+    }
+
+    return sortValue;
+  };
+};
 
 export class FilesDataProvider implements TreeDataProvider<FileItem> {
   rootPath!: string;
@@ -39,21 +64,24 @@ export class FilesDataProvider implements TreeDataProvider<FileItem> {
   initChildElements(element: FileItem, reinitExisting = false) {
     if (element.isDir()) {
       const pathChildren = nova.fs.listdir(element.path);
-      const childElements: FileItem[] = [];
-      element.childPaths = pathChildren
-        .sort((a, b) => a.localeCompare(b))
-        .map((child) => {
+      const childElements = pathChildren
+        .reduce((result: FileItem[], child) => {
           const childPath = element.path + "/" + child;
           const existingChildElement = this.pathFileItemDict[childPath];
+          if (existingChildElement) {
+            this.initChildElements(existingChildElement, reinitExisting);
+          }
           const childElement =
             existingChildElement && !reinitExisting
               ? existingChildElement
               : this.#initElementForPath(childPath, child);
           if (childElement) {
-            childElements.push(childElement);
+            result.push(childElement);
           }
-          return childPath;
-        });
+          return result;
+        }, [])
+        .sort(getSortFunction(config.fileItemsOrder));
+      element.childPaths = childElements.map((element) => element.path);
       return childElements;
     }
     return null;

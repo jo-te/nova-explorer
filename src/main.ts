@@ -1,3 +1,4 @@
+import { switchFileItemsOrder } from "./actions/configActions";
 import {
   createFileOrDir,
   deleteFileOrDir,
@@ -12,6 +13,7 @@ import {
   FILES_NEW_FILE_CMD,
   FILES_RELOAD_CMD,
   FILES_SHOW_IN_FINDER_CMD,
+  FILES_SWITCH_ORDER_CMD,
 } from "./commands";
 import { FilesDataProvider } from "./FilesDataProvider";
 import { localize } from "./localization/localize";
@@ -225,6 +227,15 @@ function activate() {
       if (treeView.selection.length === 1) {
         reloadPromise.then(() => treeView.reveal(treeView.selection[0]));
       }
+    }
+  });
+
+  nova.commands.register(FILES_SWITCH_ORDER_CMD, () => {
+    switchFileItemsOrder();
+    const element = filesDataProvider.getElementForPath(workspaceDir);
+    if (element) {
+      filesDataProvider.initChildElements(element);
+      treeView.reload();
     }
   });
 }
