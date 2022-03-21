@@ -1,4 +1,7 @@
 ## Next
+#### New
+- Added new custom icons for `.json`, `.md` and `.tsbuildinfo` files and for `.git` folder.
+
 #### Fixes
 - Fixed issue of not allowing to manually reload root of file browser.
 
