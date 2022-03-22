@@ -27,8 +27,9 @@
 ## Usage
 Open it via the sidebar center and move it into the sidebar dock. Voilà it's ready to use.<br>
 Double-click on elements to open them.<br>
-Right-click on elements to interact with them.
-Use the button on the right side of the header of the sidebar to change order of elements.
+Right-click on elements to interact with them.<br>
+Use the button on the right side of the header of the sidebar to change order of elements.<br>
+Use the second button from right to reload all open elements and apply changes of configuration.
 
 ### Configuration
 See settings of the extension and use the descriptions for guidance.
