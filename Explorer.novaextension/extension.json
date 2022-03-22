@@ -3,7 +3,7 @@
     "name": "Explorer",
     "organization": "jo-te",
     "description": "An alternative to the built in file browser currently providing only more file type icons.",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "categories": ["sidebars"],
     "license": "MIT",
     "repository": "https://github.com/jo-te/nova-explorer.git",
