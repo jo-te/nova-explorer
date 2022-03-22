@@ -1,5 +1,6 @@
 import { FILES_DOUBLE_CLICK_CMD } from "./commands";
-import { config } from "./config/config";
+import { runtimeConfig, getConfigValue } from "./config/config";
+import { FILES_ITEMS_TO_HIDE_CNFG_KEY } from "./config/keys";
 import { FileItemsOrder } from "./config/types";
 import { FileItem } from "./FileItem";
 import { resolvePathImage } from "./resolvePathImage";
@@ -62,25 +63,33 @@ export class FilesDataProvider implements TreeDataProvider<FileItem> {
   }
 
   initChildElements(element: FileItem, reinitExisting = false) {
+    const basenamesToIgnore = (getConfigValue(FILES_ITEMS_TO_HIDE_CNFG_KEY) ||
+      []) as string[];
     if (element.isDir()) {
       const pathChildren = nova.fs.listdir(element.path);
       const childElements = pathChildren
         .reduce((result: FileItem[], child) => {
+          const shallChildBeIgnored = basenamesToIgnore.includes(child);
           const childPath = element.path + "/" + child;
           const existingChildElement = this.pathFileItemDict[childPath];
           if (existingChildElement) {
             this.initChildElements(existingChildElement, reinitExisting);
+            if (shallChildBeIgnored) {
+              delete this.pathFileItemDict[childPath];
+            }
           }
-          const childElement =
-            existingChildElement && !reinitExisting
-              ? existingChildElement
-              : this.#initElementForPath(childPath, child);
-          if (childElement) {
-            result.push(childElement);
+          if (!shallChildBeIgnored) {
+            const childElement =
+              existingChildElement && !reinitExisting
+                ? existingChildElement
+                : this.#initElementForPath(childPath, child);
+            if (childElement) {
+              result.push(childElement);
+            }
           }
           return result;
         }, [])
-        .sort(getSortFunction(config.fileItemsOrder));
+        .sort(getSortFunction(runtimeConfig.fileItemsOrder));
       element.childPaths = childElements.map((element) => element.path);
       return childElements;
     }

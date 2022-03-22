@@ -14,6 +14,7 @@ import {
   FILES_RELOAD_CMD,
   FILES_SHOW_IN_FINDER_CMD,
   FILES_SWITCH_ORDER_CMD,
+  FILES_RELOAD_ROOT_CMD,
 } from "./commands";
 import { FilesDataProvider } from "./FilesDataProvider";
 import { localize } from "./localization/localize";
@@ -209,13 +210,16 @@ function activate() {
     createFileOrDirInSelection("FILE");
   });
 
+  const reloadRoot = () => {
+    const element = filesDataProvider.getElementForPath(workspaceDir);
+    if (element) {
+      filesDataProvider.initChildElements(element);
+      treeView.reload();
+    }
+  };
   nova.commands.register(FILES_RELOAD_CMD, () => {
     if (!hasTreeViewSelection()) {
-      const element = filesDataProvider.getElementForPath(workspaceDir);
-      if (element) {
-        filesDataProvider.initChildElements(element);
-        treeView.reload();
-      }
+      reloadRoot();
     } else {
       let reloadPromise = Promise.resolve();
       treeView.selection.forEach((element) => {
@@ -229,14 +233,13 @@ function activate() {
       }
     }
   });
+  nova.commands.register(FILES_RELOAD_ROOT_CMD, () => {
+    reloadRoot();
+  });
 
   nova.commands.register(FILES_SWITCH_ORDER_CMD, () => {
     switchFileItemsOrder();
-    const element = filesDataProvider.getElementForPath(workspaceDir);
-    if (element) {
-      filesDataProvider.initChildElements(element);
-      treeView.reload();
-    }
+    reloadRoot();
   });
 }
 

@@ -6,5 +6,5 @@ export const FILES_DELETE_CMD = "files.delete";
 export const FILES_NEW_FOLDER_CMD = "files.newFolder";
 export const FILES_NEW_FILE_CMD = "files.newFile";
 export const FILES_RELOAD_CMD = "files.reload";
-
+export const FILES_RELOAD_ROOT_CMD = "files.reloadRoot";
 export const FILES_SWITCH_ORDER_CMD = "files.switchOrder";

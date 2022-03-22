@@ -12,6 +12,7 @@
 - Minimal features you expect from a file browser: `Create`, `Open`, `Rename`, `Delete` files
 - Also the `Show in Finder` command is included in case you need an actual grown file browser
 - Allows to display folders before files or vice versa
+- Allows to hide specific files or folders (by exact matching)
 
 ### Features you may miss
 - Duplicating files
