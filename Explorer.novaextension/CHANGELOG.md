@@ -1,3 +1,7 @@
+## Next
+#### New
+- Added new custom icon for `.astro` files.
+
 ## Version 1.1.0
 #### New
 - Added new custom icons for `.json`, `.md` and `.tsbuildinfo` files and for `.git` folder.

@@ -25,4 +25,5 @@ export const FILE_ENDINGS_IMAGE_PAIRS: EndingsImagePair[] = [
   create("package-lock.json", "node-package-lock-file"),
   create(".json", "json-file"),
   create(".md", "markdown-file"),
+  create(".astro", "astro-file"),
 ];
