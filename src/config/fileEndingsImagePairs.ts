@@ -26,4 +26,26 @@ export const FILE_ENDINGS_IMAGE_PAIRS: EndingsImagePair[] = [
   create(".json", "json-file"),
   create(".md", "markdown-file"),
   create(".astro", "astro-file"),
+  create(
+    [
+      ".dockerignore",
+      "compose.yaml",
+      "compose.yml",
+      "docker-compose.yaml",
+      "docker-compose.yml",
+      "docker-compose.ci-build.yaml",
+      "docker-compose.ci-build.yml",
+      "docker-compose.override.yaml",
+      "docker-compose.override.yml",
+      "docker-compose.vs.debug.yaml",
+      "docker-compose.vs.debug.yml",
+      "docker-compose.vs.release.yaml",
+      "docker-compose.vs.release.yml",
+      "docker-cloud.yaml",
+      "docker-cloud.yml",
+      "Dockerfile",
+    ],
+    "docker-file"
+  ),
+  create(".py", "python-file"),
 ];
