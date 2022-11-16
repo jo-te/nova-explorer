@@ -1,6 +1,7 @@
 ## Next
 #### New
-- Added new custom icon for `.astro` files.
+- Added new custom icon for `.astro` and `.py` files.
+- Added new custom icon for Docker related files.
 
 ## Version 1.1.0
 #### New
