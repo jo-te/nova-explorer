@@ -16,6 +16,7 @@ The `watch` script will compile the `.ts` source files on every change resulting
 - [ ] Add another sidebar section displaying files related to open editors and also which are unsaved
 - [ ] Allow to pin files
 - [ ] Move translations into `ts`-files and generate before publish related `strings.json` files
+- [ ] Display git status like modified or added
 
 ## General Todos
 - [ ] Add documental comments
