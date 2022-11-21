@@ -48,4 +48,5 @@ export const FILE_ENDINGS_IMAGE_PAIRS: EndingsImagePair[] = [
     "docker-file"
   ),
   create(".py", "python-file"),
+  create(".env", "dotenv-file"),
 ];
