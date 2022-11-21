@@ -1,4 +1,4 @@
-## Next
+## Version 1.1.1
 #### New
 - Added new custom icon for `.astro`, `.py` and `.env` files.
 - Added new custom icon for Docker related files.

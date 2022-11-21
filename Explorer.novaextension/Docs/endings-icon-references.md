@@ -24,6 +24,10 @@ File ending(s) | Icon image
 `package-lock.json` | ![File icon](../Images/node-package-lock-file/node-package-lock-file@2x.png)
 `.json` | ![File icon](../Images/json-file/json-file@2x.png)
 `.md` | ![File icon](../Images/markdown-file/markdown-file@2x.png)
+`.astro` | ![File icon](../Images/astro-file/astro-file@2x.png)
+`.dockerignore`, `compose.yaml`, `compose.yml`, `docker-compose.yaml`, `docker-compose.yml`, `docker-compose.ci-build.yaml`, `docker-compose.ci-build.yml`, `docker-compose.override.yaml`, `docker-compose.override.yml`, `docker-compose.vs.debug.yaml`, `docker-compose.vs.debug.yml`, `docker-compose.vs.release.yaml`, `docker-compose.vs.release.yml`, `docker-cloud.yaml`, `docker-cloud.yml`, `Dockerfile` | ![File icon](../Images/docker-file/docker-file@2x.png)
+`.py` | ![File icon](../Images/python-file/python-file@2x.png)
+`.env` | ![File icon](../Images/dotenv-file/dotenv-file@2x.png)
 
 ## Folder icons
 Folder name(s) | Icon image
