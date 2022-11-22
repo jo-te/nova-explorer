@@ -32,7 +32,11 @@ export const renameFileOrDir = (
               return resolve(false);
             }
             const newPath = path.slice(0, -currentName.length) + value;
-            if (hasFileOrDirAlreadyStats(newPath, value)) {
+            if (
+              // Check if value is just current name with different upper and lower case since Nova returns stats independent of upper and lower case
+              currentName.toLowerCase() !== value.toLowerCase() &&
+              hasFileOrDirAlreadyStats(newPath, value)
+            ) {
               return resolve(false);
             } else {
               nova.fs.move(path, newPath);

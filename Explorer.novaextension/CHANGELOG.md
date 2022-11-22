@@ -1,3 +1,7 @@
+## Next
+#### Fixes
+- Fixed issue of not allowing to rename a file with different upper and lower case spelling.
+
 ## Version 1.1.1
 #### New
 - Added new custom icon for `.astro`, `.py` and `.env` files.
